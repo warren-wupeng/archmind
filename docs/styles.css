@@ -807,13 +807,13 @@ body {
         height: 350px;
     }
 
-    /* Tablet specific agent positioning */
-    .agent:nth-child(1) { top: 15px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(2) { top: 70px; right: 35px; }
-    .agent:nth-child(3) { top: 165px; right: 15px; }
-    .agent:nth-child(4) { bottom: 70px; right: 35px; }
-    .agent:nth-child(5) { bottom: 15px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(6) { top: 165px; left: 15px; }
+    /* Tablet specific agent positioning - 350px container */
+    .agent:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 60px; right: 25px; }
+    .agent:nth-child(3) { top: 150px; right: 10px; }
+    .agent:nth-child(4) { bottom: 60px; right: 25px; }
+    .agent:nth-child(5) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 150px; left: 10px; }
 }
 
 @media (max-width: 768px) {
@@ -887,9 +887,9 @@ body {
     }
 
     .central-brain {
-        width: 110px;
-        height: 110px;
-        border-width: 3px;
+        width: 100px;
+        height: 100px;
+        border-width: 2px;
     }
 
     .central-brain i {
@@ -901,9 +901,9 @@ body {
     }
 
     .agent {
-        width: 75px;
-        height: 75px;
-        font-size: 0.75rem;
+        width: 70px;
+        height: 70px;
+        font-size: 0.7rem;
         border-width: 2px;
     }
 
@@ -911,13 +911,13 @@ body {
         font-size: 1.1rem;
     }
 
-    /* Mobile specific agent positioning */
-    .agent:nth-child(1) { top: 15px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(2) { top: 70px; right: 25px; }
-    .agent:nth-child(3) { top: 140px; right: 15px; }
-    .agent:nth-child(4) { bottom: 70px; right: 25px; }
-    .agent:nth-child(5) { bottom: 15px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(6) { top: 140px; left: 15px; }
+    /* Mobile specific agent positioning - 320px container */
+    .agent:nth-child(1) { top: 5px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 50px; right: 10px; }
+    .agent:nth-child(3) { top: 120px; right: 5px; }
+    .agent:nth-child(4) { bottom: 50px; right: 10px; }
+    .agent:nth-child(5) { bottom: 5px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 120px; left: 5px; }
 
     /* Section spacing */
     .problem-statement,
@@ -1159,8 +1159,8 @@ body {
     }
 
     .central-brain {
-        width: 90px;
-        height: 90px;
+        width: 80px;
+        height: 80px;
     }
 
     .central-brain i {
@@ -1172,22 +1172,22 @@ body {
     }
 
     .agent {
-        width: 65px;
-        height: 65px;
-        font-size: 0.65rem;
+        width: 58px;
+        height: 58px;
+        font-size: 0.6rem;
     }
 
     .agent i {
         font-size: 0.9rem;
     }
 
-    /* Small mobile specific agent positioning */
-    .agent:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(2) { top: 55px; right: 20px; }
-    .agent:nth-child(3) { top: 115px; right: 10px; }
-    .agent:nth-child(4) { bottom: 55px; right: 20px; }
-    .agent:nth-child(5) { bottom: 10px; left: 50%; transform: translateX(-50%); }
-    .agent:nth-child(6) { top: 115px; left: 10px; }
+    /* Small mobile specific agent positioning - 260px container */
+    .agent:nth-child(1) { top: 5px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 45px; right: 8px; }
+    .agent:nth-child(3) { top: 95px; right: 3px; }
+    .agent:nth-child(4) { bottom: 45px; right: 8px; }
+    .agent:nth-child(5) { bottom: 5px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 95px; left: 3px; }
 
     .problem-statement h2,
     .features h2,
