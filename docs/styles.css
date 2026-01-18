@@ -239,12 +239,12 @@ body {
     margin-bottom: 0.3rem;
 }
 
-.agent:nth-child(1) { top: 20px; left: 50%; transform: translateX(-50%); }
-.agent:nth-child(2) { top: 80px; right: 40px; }
-.agent:nth-child(3) { top: 200px; right: 20px; }
-.agent:nth-child(4) { bottom: 80px; right: 40px; }
-.agent:nth-child(5) { bottom: 20px; left: 50%; transform: translateX(-50%); }
-.agent:nth-child(6) { top: 200px; left: 20px; }
+.agent:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+.agent:nth-child(2) { top: 60px; right: 30px; }
+.agent:nth-child(3) { top: 160px; right: 10px; }
+.agent:nth-child(4) { bottom: 60px; right: 30px; }
+.agent:nth-child(5) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+.agent:nth-child(6) { top: 160px; left: 10px; }
 
 @keyframes pulse {
     0%, 100% { transform: translate(-50%, -50%) scale(1); }
@@ -806,6 +806,14 @@ body {
         width: 350px;
         height: 350px;
     }
+
+    /* Tablet specific agent positioning */
+    .agent:nth-child(1) { top: 15px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 70px; right: 35px; }
+    .agent:nth-child(3) { top: 165px; right: 15px; }
+    .agent:nth-child(4) { bottom: 70px; right: 35px; }
+    .agent:nth-child(5) { bottom: 15px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 165px; left: 15px; }
 }
 
 @media (max-width: 768px) {
@@ -902,6 +910,14 @@ body {
     .agent i {
         font-size: 1.1rem;
     }
+
+    /* Mobile specific agent positioning */
+    .agent:nth-child(1) { top: 15px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 70px; right: 25px; }
+    .agent:nth-child(3) { top: 140px; right: 15px; }
+    .agent:nth-child(4) { bottom: 70px; right: 25px; }
+    .agent:nth-child(5) { bottom: 15px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 140px; left: 15px; }
 
     /* Section spacing */
     .problem-statement,
@@ -1164,6 +1180,14 @@ body {
     .agent i {
         font-size: 0.9rem;
     }
+
+    /* Small mobile specific agent positioning */
+    .agent:nth-child(1) { top: 10px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(2) { top: 55px; right: 20px; }
+    .agent:nth-child(3) { top: 115px; right: 10px; }
+    .agent:nth-child(4) { bottom: 55px; right: 20px; }
+    .agent:nth-child(5) { bottom: 10px; left: 50%; transform: translateX(-50%); }
+    .agent:nth-child(6) { top: 115px; left: 10px; }
 
     .problem-statement h2,
     .features h2,
