@@ -120,24 +120,19 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Typing animation for hero title
+// Improved hero title animation (no typing effect to avoid HTML rendering issues)
 document.addEventListener('DOMContentLoaded', function() {
     const heroTitle = document.querySelector('.hero-title');
     if (heroTitle) {
-        const text = heroTitle.innerHTML;
-        heroTitle.innerHTML = '';
+        // Simple fade-in animation instead of typing
+        heroTitle.style.opacity = '0';
+        heroTitle.style.transform = 'translateY(30px)';
+        heroTitle.style.transition = 'opacity 1s ease, transform 1s ease';
 
-        let i = 0;
-        function typeWriter() {
-            if (i < text.length) {
-                heroTitle.innerHTML += text.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-
-        // Start typing animation after a short delay
-        setTimeout(typeWriter, 500);
+        setTimeout(() => {
+            heroTitle.style.opacity = '1';
+            heroTitle.style.transform = 'translateY(0)';
+        }, 500);
     }
 });
 

@@ -759,9 +759,37 @@ body {
 }
 
 .nav-links.mobile-open a {
-    padding: 0.75rem 0;
+    padding: 1rem 0;
     border-bottom: 1px solid rgba(226, 232, 240, 0.5);
     font-size: 1.1rem;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+
+.nav-links.mobile-open a:hover {
+    color: #4f46e5;
+    background: rgba(79, 70, 229, 0.05);
+    margin: 0 -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    border-radius: 8px;
+}
+
+.nav-links.mobile-open .github-link {
+    background: #4f46e5;
+    color: white !important;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    justify-content: center;
+}
+
+.nav-links.mobile-open .github-link:hover {
+    background: #4338ca;
+    margin: 0.5rem -1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 /* Responsive Design */
@@ -783,6 +811,9 @@ body {
 @media (max-width: 768px) {
     .mobile-menu-btn {
         display: block;
+        padding: 0.5rem;
+        min-width: 44px;
+        min-height: 44px;
     }
 
     .nav {
@@ -790,69 +821,86 @@ body {
         position: relative;
     }
 
+    .nav-brand {
+        font-size: 1.4rem;
+    }
+
     .nav-links {
         display: none;
     }
 
     .hero {
-        padding-top: 100px;
-        min-height: 90vh;
+        padding: 120px 0 60px 0;
+        min-height: 100vh;
     }
 
     .hero .container {
         grid-template-columns: 1fr;
         text-align: center;
-        gap: 2rem;
+        gap: 3rem;
+        padding: 0 1.5rem;
     }
 
     .hero-title {
-        font-size: 2.2rem;
-        line-height: 1.3;
-        margin-bottom: 1rem;
+        font-size: 2.4rem;
+        line-height: 1.2;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
     }
 
     .hero-subtitle {
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        line-height: 1.5;
+        padding: 0 0.5rem;
     }
 
     .hero-buttons {
         justify-content: center;
-        gap: 0.75rem;
+        gap: 1rem;
+        flex-direction: column;
+        align-items: center;
     }
 
     .btn {
-        padding: 0.6rem 1.2rem;
-        font-size: 0.95rem;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        min-height: 44px;
+        width: 240px;
+        justify-content: center;
+        border-radius: 10px;
     }
 
     .architect-diagram {
-        width: 280px;
-        height: 280px;
-        margin-top: 1rem;
+        width: 320px;
+        height: 320px;
+        margin: 2rem auto 0;
+        position: relative;
     }
 
     .central-brain {
-        width: 100px;
-        height: 100px;
+        width: 110px;
+        height: 110px;
+        border-width: 3px;
     }
 
     .central-brain i {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 
     .central-brain span {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .agent {
-        width: 70px;
-        height: 70px;
-        font-size: 0.7rem;
+        width: 75px;
+        height: 75px;
+        font-size: 0.75rem;
+        border-width: 2px;
     }
 
     .agent i {
-        font-size: 1rem;
+        font-size: 1.1rem;
     }
 
     /* Section spacing */
@@ -1024,15 +1072,23 @@ body {
     }
 
     /* CTA Mobile */
+    .cta {
+        padding: 4rem 0;
+    }
+
     .cta-buttons {
         flex-direction: column;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
     .cta-buttons .btn {
-        width: 200px;
+        width: 240px;
+        padding: 1rem 2rem;
+        font-size: 1rem;
+        min-height: 44px;
         justify-content: center;
+        border-radius: 10px;
     }
 }
 
@@ -1041,40 +1097,72 @@ body {
         padding: 0 1rem;
     }
 
-    .hero-title {
-        font-size: 1.8rem;
+    .nav {
+        padding: 0.75rem 1rem;
     }
 
-    .hero-subtitle {
-        font-size: 1rem;
-    }
-
-    .architect-diagram {
-        width: 240px;
-        height: 240px;
-    }
-
-    .central-brain {
-        width: 80px;
-        height: 80px;
-    }
-
-    .central-brain i {
+    .nav-brand {
         font-size: 1.2rem;
     }
 
+    .nav-brand i {
+        font-size: 1.4rem;
+    }
+
+    .mobile-menu-btn {
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0.4rem;
+    }
+
+    .hero {
+        padding: 100px 0 40px 0;
+    }
+
+    .hero .container {
+        padding: 0 1rem;
+        gap: 2rem;
+    }
+
+    .hero-title {
+        font-size: 2rem;
+        line-height: 1.3;
+        padding: 0 0.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.05rem;
+        padding: 0;
+        line-height: 1.4;
+    }
+
+    .architect-diagram {
+        width: 260px;
+        height: 260px;
+        margin: 1rem auto 0;
+    }
+
+    .central-brain {
+        width: 90px;
+        height: 90px;
+    }
+
+    .central-brain i {
+        font-size: 1.4rem;
+    }
+
     .central-brain span {
-        font-size: 0.7rem;
+        font-size: 0.75rem;
     }
 
     .agent {
-        width: 60px;
-        height: 60px;
-        font-size: 0.6rem;
+        width: 65px;
+        height: 65px;
+        font-size: 0.65rem;
     }
 
     .agent i {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
     }
 
     .problem-statement h2,
