@@ -51,9 +51,8 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Mobile menu toggle (basic implementation)
+// Enhanced Mobile menu toggle
 document.addEventListener('DOMContentLoaded', function() {
-    // Add mobile menu button if needed
     const nav = document.querySelector('.nav');
     const navLinks = document.querySelector('.nav-links');
 
@@ -61,23 +60,23 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileMenuBtn = document.createElement('button');
     mobileMenuBtn.className = 'mobile-menu-btn';
     mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
-    mobileMenuBtn.style.display = 'none';
-    mobileMenuBtn.style.background = 'none';
-    mobileMenuBtn.style.border = 'none';
-    mobileMenuBtn.style.fontSize = '1.5rem';
-    mobileMenuBtn.style.color = '#4f46e5';
-    mobileMenuBtn.style.cursor = 'pointer';
-
+    mobileMenuBtn.setAttribute('aria-label', 'Toggle mobile menu');
     nav.appendChild(mobileMenuBtn);
+
+    let isMenuOpen = false;
 
     // Mobile responsiveness
     function handleResize() {
         if (window.innerWidth <= 768) {
             mobileMenuBtn.style.display = 'block';
-            navLinks.style.display = 'none';
+            if (!isMenuOpen) {
+                navLinks.classList.remove('mobile-open');
+            }
         } else {
             mobileMenuBtn.style.display = 'none';
-            navLinks.style.display = 'flex';
+            navLinks.classList.remove('mobile-open');
+            isMenuOpen = false;
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
         }
     }
 
@@ -85,19 +84,38 @@ document.addEventListener('DOMContentLoaded', function() {
     handleResize(); // Initial check
 
     // Mobile menu toggle
-    mobileMenuBtn.addEventListener('click', function() {
-        if (navLinks.style.display === 'none' || navLinks.style.display === '') {
-            navLinks.style.display = 'flex';
-            navLinks.style.flexDirection = 'column';
-            navLinks.style.position = 'absolute';
-            navLinks.style.top = '100%';
-            navLinks.style.left = '0';
-            navLinks.style.right = '0';
-            navLinks.style.background = 'white';
-            navLinks.style.padding = '1rem';
-            navLinks.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+    mobileMenuBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        isMenuOpen = !isMenuOpen;
+
+        if (isMenuOpen) {
+            navLinks.classList.add('mobile-open');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-times"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'true');
         } else {
-            navLinks.style.display = 'none';
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close mobile menu when clicking on a link
+    navLinks.addEventListener('click', function(e) {
+        if (e.target.tagName === 'A' && window.innerWidth <= 768) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            isMenuOpen = false;
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // Close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        if (isMenuOpen && !nav.contains(e.target)) {
+            navLinks.classList.remove('mobile-open');
+            mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+            isMenuOpen = false;
+            mobileMenuBtn.setAttribute('aria-expanded', 'false');
         }
     });
 });
